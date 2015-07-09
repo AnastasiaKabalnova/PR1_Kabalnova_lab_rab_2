@@ -1,0 +1,54 @@
+# PR1_Kabalnova_lab_rab_2
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Построение многоугольника по заданным координатам - API Яндекс.Карт v 2.x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        ymaps.ready(init);
+ 
+        function init () {
+            var myMap = new ymaps.Map("map", {
+                    center: [-22.91097808, -43.16837663],
+                    zoom: 10
+                }),
+                // Создаем многоугольник
+               myPolygon = new ymaps.Polygon([[
+                    // Координаты вершин внешней границы многоугольника.
+			[-22.61550698, -43.17936296],
+			[-22.62570639, -43.11344499],
+			[-22.64610290, -43.06400652],
+                        [-22.67159424, -42.99808855],
+			[-22.70217752, -42.94315691],
+			[-22.75822893, -42.89371843],
+                        [-22.83971673, -42.86075945],
+			[-22.90588924, -42.89921159],
+			[-22.94150707, -42.94865007],
+                        [-22.96694258, -43.01456804],
+			[-22.97202911, -43.10245866],
+			[-22.98220157, -43.20133562],
+                        [-22.98220157, -43.36063737],
+			[-22.94659456, -43.51444597],
+			[-22.91097808, -43.56388445],
+                        [-22.86517155, -43.56937761],
+			[-22.80407188, -43.57487077],
+			[-22.61550698, -43.17936296]
+                ]]);
+ 
+            myMap.geoObjects               
+                .add(myPolygon);
+        }
+    </script>
+</head>
+ 
+<body>
+<h2>Построение многоугольника по заданным координатам</h2>
+ 
+<div id="map" style="width:800px; height:600px"></div>
+</body>
+ 
+</html>
